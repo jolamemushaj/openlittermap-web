@@ -1,9 +1,9 @@
 <template>
-    <div>
+    <div class="about">
         <!-- Cigarette Butts -->
         <section class="section">
             <div class="columns">
-                <div class="column is-one-third is-offset-1" style="text-align: center;">
+                <div class="column is-one-third" style="text-align: center;">
                     <img src="/assets/butts.jpg" /> d
                 </div>
 
@@ -16,7 +16,7 @@
             <br>
             <br>
             <div class="columns">
-                <div class="column is-one-third is-offset-1">
+                <div class="column is-one-third">
                     <h1 class="title is-1" style="text-align: center;"><strong>{{ $t('home.about.about3') }}</strong></h1>
                     <br>
                     <h1 class="subtitle is-3">{{ $t('home.about.about4') }}</h1>
@@ -26,7 +26,7 @@
                     <p class="subtitle is-3">{{ $t('home.about.about6') }}</p>
                 </div>
 
-                <div class="column is-offset-1 butts-img">
+                <div class="column butts-img">
                     <img src="/assets/cigbutts_jar.jpg" style="height: 600px;">
                 </div>
             </div>
@@ -51,25 +51,28 @@
             </div>
         </section>
 
-        <!-- 1. Just take a photo -->
-        <div class="has-text-centered pt3">
-            <h1 class="title is-1">1. {{ $t('home.about.about9a') }}</h1>
+        <div class="process">
+            <!-- 1. Just take a photo -->
+            <div class="has-text-centered pt3">
+                <h1 class="title is-1">1. {{ $t('home.about.about9a') }}</h1>
 
-            <img src="/assets/about/iphone.PNG" />
-        </div>
+                <img src="/assets/about/iphone.PNG" />
+            </div>
 
-        <!-- 2. Tag it with our app -->
-        <div class="has-text-centered pt3">
-            <h1 class="title is-1">2. {{ $t('home.about.about9b') }}</h1>
+            <!-- 2. Tag it with our app -->
+            <div class="has-text-centered pt3">
+                <h1 class="title is-1">2. {{ $t('home.about.about9b') }}</h1>
 
-            <img src="/assets/about/facemask-tag.PNG" />
-        </div>
+                <img src="/assets/about/facemask-tag.PNG" />
+            </div>
 
-        <!-- 3. Upload it -->
-        <div class="has-text-centered pt3">
-            <h1 class="title is-1">3. {{ $t('home.about.about9c') }}</h1>
+            <!-- 3. Upload it -->
+            <div class="has-text-centered pt3">
+                <h1 class="title is-1">3. {{ $t('home.about.about9c') }}</h1>
 
-            <img src="/assets/about/facemask-map.PNG" />
+                <img src="/assets/about/facemask-map.PNG" />
+            </div>
+
         </div>
 
         <!-- Download app icons -->
@@ -278,7 +281,19 @@ export default {
 }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
+
+    .about {
+        padding: 0 10rem;
+    }
+
+    .process {
+        //display: flex;
+        //
+        //.rot {
+        //    transform: rotate(-90deg);
+        //}
+    }
 
     .butts-img {
         text-align: center;
