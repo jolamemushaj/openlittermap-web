@@ -4,7 +4,7 @@
         <section class="section">
             <div class="columns">
                 <div class="column is-one-third is-offset-1" style="text-align: center;">
-                    <img src="/assets/butts.jpg" />
+                    <img src="/assets/butts.jpg" /> d
                 </div>
 
                 <div class="column cig-2">
