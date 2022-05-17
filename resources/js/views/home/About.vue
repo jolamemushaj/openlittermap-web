@@ -1,7 +1,112 @@
 <template>
     <div>
+        <div>
+            <!-- Cigarette Butts -->
+            <section class="section__1">
+
+                <div class="section__1--title">
+                    OpenLitterMap data is <span class="section__1--title1">Open Data</span>
+                </div>
+                <div class="section__1--text">
+                    Right now, trillions of plastic-tipped cigarette butts are leeching toxic chemicals and microplastics into the environment.
+                </div>
+
+            </section>
+
+        </div>
+
+        <section class="section-about">
+            <div class="row">
+                <div class="col-1-of-2">
+
+                    <p class="paragraph paragraph-bold">The problem</p>
+
+                    <p class="paragraph">
+                        Every year, millions of tonnes of plastic makes its way from land to sea.
+                        Where it becomes significantly more damaging, more difficult, & more expensive to remove.
+                    </p>
+
+                    <p class="paragraph paragraph-bold">The result</p>
+
+                    <p class="paragraph">
+                        Massive amounts of nicotine and other toxic chemicals get released.
+                        These toxic chemicals bio-accumulate in various plants and animals. Some of which we eat.
+                        An environmental emergency is at our fingertips.
+                    </p>
+                </div>
+
+                <div class="col-1-of-2">
+                    <div class="composition">
+                        <img src="/assets/butts.jpg" alt="Photo 1" class="composition__photo composition__photo--p1">
+                        <img src="/assets/can_litter.jpg" alt="Photo 2" class="composition__photo composition__photo--p2">
+                        <img src="/assets/plastic_bottles.jpg" alt="Photo 3" class="composition__photo composition__photo--p3">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Call to action -->
+        <section class="hero is-success">
+            <div class="hero-body">
+                <div class="container has-text-centered">
+                    <h1 class="title">
+                        <strong>
+                            {{ $t('home.about.about7') }}
+                        </strong>
+                    </h1>
+                    <!-- subtitle removed -->
+                </div>
+                <div class="has-text-centered" style="padding-top: 2em;">
+                    <router-link to="/signup">
+                        <button class="btn btn--white btn--animated">{{ $t('home.about.about9') }}</button>
+                    </router-link>
+                </div>
+            </div>
+        </section>
+
+        <!-- 1. Just take a photo -->
+        <div class="has-text-centered pt3">
+            <h1 class="title is-1">1. {{ $t('home.about.about9a') }}</h1>
+
+            <img src="/assets/about/iphone.PNG" />
+        </div>
+
+        <!-- 2. Tag it with our app -->
+        <div class="has-text-centered pt3">
+            <h1 class="title is-1">2. {{ $t('home.about.about9b') }}</h1>
+
+            <img src="/assets/about/facemask-tag.PNG" />
+        </div>
+
+        <!-- 3. Upload it -->
+        <div class="has-text-centered pt3">
+            <h1 class="title is-1">3. {{ $t('home.about.about9c') }}</h1>
+
+            <img src="/assets/about/facemask-map.PNG" />
+        </div>
+
+        <!-- Download app icons -->
+        <div class="flex jc pt3">
+            <img
+                src="/assets/icons/ios.png"
+                class="app-icon"
+                style="margin-right: 1em;"
+                @click="ios"
+            />
+            <img
+                src="/assets/icons/android.png"
+                class="app-icon"
+                @click="android"
+            />
+        </div>
+
+
+
+
+
+
         <!-- Cigarette Butts -->
-        <section class="section">
+        <section style="margin-top: 1000px" class="section">
             <div class="columns">
                 <div class="column is-one-third is-offset-1" style="text-align: center;">
                     <img src="/assets/butts.jpg" />
@@ -280,25 +385,243 @@ export default {
 
 <style scoped>
 
+.section__1 {
+    height: 95vh;
+    background-image: url("/assets/IMG_0556.JPG");
+    background-size: cover;
+    background-position: top;
+    position: relative;
+}
+
+.section__1--title {
+    font-size: 50px;
+    font-weight: 700;
+    line-height: 1.5rem;
+    letter-spacing: 0.1em;
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.section__1--title1 {
+    font-size: 50px;
+    font-weight: 700;
+    color: white;
+}
+
+.section__1--text {
+    font-size: 24px;
+    font-weight: 400;
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.section-about {
+    background-color: #f7f7f7;
+    padding: 10rem 8rem 15rem;
+}
+
+.paragraph {
+    font-size: 1.5rem;
+    font-weight: 400;
+    line-height: 1.7;
+    color: #777;
+    margin-bottom: 1.5rem;
+}
+
+.paragraph-bold {
+    font-size: 2rem;
+    font-weight: 600;
+    color: #777;
+
+}
+
+
+.row {
+    max-width: 114rem;
+    margin: 0 auto;
+}
+
+.row:not(:last-child) {
+    margin-bottom: 8rem;
+}
+
+.row::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.row [class^="col-"] {
+    float: left;
+}
+
+.row [class^="col-"]:not(:last-child) {
+    margin-right: 6rem;
+}
+
+.row .col-1-of-2 {
+    width: calc((100% - 6rem) / 2);
+}
+
+
+.composition {
+    position: relative;
+}
+
+.composition__photo {
+    width: 70%;
+    box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.4);
+    position: absolute;
+    z-index: 10;
+    transition: all .2s;
+    outline-offset: 2rem;
+}
+
+@media (max-width: 56.25em) {
+    .composition__photo {
+        float: left;
+        position: relative;
+        width: 33.3333%;
+        box-shadow: 0 1.5rem 3rem rgba(0, 0, 0, 0.2);
+    }
+}
+
+.composition__photo--p1 {
+    left: 0;
+    top: -3rem;
+}
+
+@media (max-width: 56.25em) {
+    .composition__photo--p1 {
+        top: 0;
+        transform: scale(1.2);
+    }
+}
+
+.composition__photo--p2 {
+    right: -3rem;
+    top: 4rem;
+}
+
+@media (max-width: 56.25em) {
+    .composition__photo--p2 {
+        top: -1rem;
+        transform: scale(1.3);
+        z-index: 100;
+    }
+}
+
+.composition__photo--p3 {
+    left: 20%;
+    top: 13rem;
+}
+
+@media (max-width: 56.25em) {
+    .composition__photo--p3 {
+        top: 1rem;
+        left: 0;
+        transform: scale(1.1);
+    }
+}
+
+.composition__photo:hover {
+    outline: 1.5rem solid #55c57a;
+    transform: scale(1.05) translateY(-0.5rem);
+    box-shadow: 0 2.5rem 4rem rgba(0, 0, 0, 0.5);
+    z-index: 20;
+}
+
+.composition:hover .composition__photo:not(:hover) {
+    transform: scale(0.95);
+}
+
+.hero {
+    background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8));
+}
+
+
+
+.btn, .btn:link, .btn:visited {
+    margin-top: 1.6rem;
+    text-decoration: none;
+    padding: 1rem 3rem;
+    display: inline-block;
+    border-radius: 11rem;
+    transition: all .2s;
+    position: relative;
+    font-size: 1.3rem;
+    border: none;
+    cursor: pointer; }
+
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2); }
+.btn:hover::after {
+    transform: scaleX(1.5) scaleY(1.6);
+    opacity: 0; }
+
+.btn:active .btn:focus {
+    outline: none;
+    transform: translateY(-1px);
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2); }
+
+.btn--white {
+    background-color: #fff;
+    color: #777; }
+.btn--white::after {
+    background-color: #fff; }
+
+.btn::after {
+    content: "";
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    border-radius: 10rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: all .4s; }
+
+.btn--animated {
+    animation: moveInBottom .5s ease-out .75s;
+    animation-fill-mode: backwards; }
+
+
+
+
+
+
+
+
+
+
+
+
+.butts-img {
+    text-align: center;
+    padding-right: 5em;
+}
+
+.cig-2 {
+    align-items: center;
+    display: flex;
+    padding: 5em;
+}
+
+@media screen and (max-width: 768px) {
     .butts-img {
-        text-align: center;
-        padding-right: 5em;
+        padding-right: 0;
     }
 
     .cig-2 {
-        align-items: center;
-        display: flex;
-        padding: 5em;
+        padding: 1em;
     }
-
-    @media screen and (max-width: 768px)
-    {
-        .butts-img {
-            padding-right: 0;
-        }
-
-        .cig-2 {
-            padding: 1em;
-        }
-    }
+}
 </style>
